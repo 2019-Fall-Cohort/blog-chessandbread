@@ -22,12 +22,10 @@ public class Post {
 	private Genre theGenre;
 	
 	public Post( String title,String author, String bodyText, String genre ) {
-		
 		this.title = title;
 		this.author = author;
 		this.bodyText = bodyText;
 		this.genre = genre;
-		
 	}
 	
 	public Post() {}
@@ -47,12 +45,12 @@ public class Post {
 	public String getGenre() {
 		return genre;
 	}
-
 	
 	public String getTitle() {
 		return title;
 		
 	}
+	
 	@Override
 	public String toString() {
 		return title;
