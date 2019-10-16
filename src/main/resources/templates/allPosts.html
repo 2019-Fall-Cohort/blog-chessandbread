@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read All Posts!</title>
+</head>
+<body>
+    <p>Here are the posts:</p>
+    <div th:each="post : ${posts}">
+        <a th:text="${post.title}" th:href="|/allPosts/${post.id}|">View All Posts</a>
+    </div>
+
+</body>
+</html>
