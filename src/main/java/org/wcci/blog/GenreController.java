@@ -9,21 +9,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/allPosts")
-public class PostController {
-	
+@RequestMapping("/allGenres")
+public class GenreController {
+
 	@Resource
-	PostStorage allPosts;
-	
+	GenreStorage allGenres;
+
 	@GetMapping("")
-	public String getPosts(Model model) {
-		model.addAttribute("allPosts", allPosts.findAllPosts());
-		return "allPosts";
+	public String getGenres(Model model) {
+		model.addAttribute("allGenres", allGenres.findAllGenres());
+		return "allGenres";
 	}
-	
+
 	@RequestMapping("/{id}")
-	public String getCompany(@PathVariable ("id") long id, Model model) {
-		model.addAttribute("post", allPosts.findPost(id));
-		return "post";
+	public String getGenre(@PathVariable ("id") long id, Model model) {
+		model.addAttribute("genre", allGenres.findGenre(id));
+		return "genre";
 	}
+
 }

@@ -9,21 +9,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/allPosts")
-public class PostController {
-	
+@RequestMapping("/allAuthors")
+public class AuthorController {
+
 	@Resource
-	PostStorage allPosts;
-	
+	AuthorStorage allAuthors;
+
 	@GetMapping("")
-	public String getPosts(Model model) {
-		model.addAttribute("allPosts", allPosts.findAllPosts());
-		return "allPosts";
+	public String getAuthors(Model model) {
+		model.addAttribute("allAuthors", allAuthors.findAllAuthors());
+		return "allAuthors";
 	}
-	
+
 	@RequestMapping("/{id}")
-	public String getCompany(@PathVariable ("id") long id, Model model) {
-		model.addAttribute("post", allPosts.findPost(id));
-		return "post";
+	public String getAuthor(@PathVariable ("id") long id, Model model) {
+		model.addAttribute("author", allAuthors.findAuthor(id));
+		return "Author";
 	}
+
 }
