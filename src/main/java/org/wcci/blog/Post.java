@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 public class Post {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long postId;
 	private String author;
 	private String bodyText;
 	private String genre;
@@ -21,7 +21,7 @@ public class Post {
 	@ManyToOne
 	private Genre theGenre;
 	
-	public Post( String title,String author, String bodyText, String genre ) {
+	public Post(String title, String author, String bodyText, String genre){
 		this.title = title;
 		this.author = author;
 		this.bodyText = bodyText;
@@ -30,8 +30,8 @@ public class Post {
 	
 	public Post() {}
 
-	public Long getId() {
-		return id;
+	public Long getPostId() {
+		return postId;
 	}
 
 	public String getAuthor() {
@@ -48,7 +48,6 @@ public class Post {
 	
 	public String getTitle() {
 		return title;
-		
 	}
 	
 	@Override

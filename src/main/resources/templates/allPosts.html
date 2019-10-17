@@ -6,11 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Read All Posts!</title>
 </head>
+
 <body>
-    <p>Here are the posts:</p>
-    <div th:each="post : ${posts}">
-        <a th:text="${post.title}" th:href="|/allPosts/${post.id}|">View All Posts</a>
+    <p>Here's the latest & greatest!:</p>
+    <div th:each="post : ${allPosts}">
+        <a th:text="${post.title}" th:href="|/allPosts/${post.postId}|">View All Posts</a>
     </div>
+
+    <main>
+        <ul>
+                <li th:each="post : ${allPosts}">
+                        <span th:text="${post.title}"></span>
+                        <span th:text="${post.author}"></span>
+                        <span th:text="${post.bodyText}"></span>
+                        <span th:text="${post.genre}"></span>
+                </li>
+            </ul>
+            <form action="/addPost" method="POST">
+                <label>Title of your post: 
+                        <input type="text" name="post.title" /></label>
+                <label>Author name: 
+                        <input type="text" name="post.author" /></label>
+                <label>Tell me a story! 
+                        <input type="text" name="post.bodyText" /></label>
+                <label>What genre? 
+                        <input type="text" name="post.genre" /></label>
+
+                <button type="publish">Publish!</button>
+            </form>
+    </main>
+
 
 </body>
 </html>

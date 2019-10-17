@@ -23,9 +23,8 @@ public class PostStorage {
 		return postRepo.findAll();
 	}
 
-	public void add(Post post) {
-		authorRepo.save(post.getAuthor());
-		genreRepo.save(post.getGenre());
+	public void addPost(Post post) {
 		postRepo.save(post);
 	}
+
 }
