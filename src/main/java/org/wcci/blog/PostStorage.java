@@ -8,10 +8,8 @@ public class PostStorage {
 
 	@Autowired
 	PostRepository postRepo;
-	
 	@Autowired
 	AuthorRepository authorRepo;
-	
 	@Autowired
 	GenreRepository genreRepo;
 	

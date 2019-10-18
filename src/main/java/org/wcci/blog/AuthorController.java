@@ -24,7 +24,6 @@ public class AuthorController {
 	@RequestMapping("/{id}")
 	public String getAuthor(@PathVariable ("id") long id, Model model) {
 		model.addAttribute("author", allAuthors.findAuthor(id));
-		return "Author";
+		return "author";
 	}
-
 }

@@ -1,5 +1,7 @@
 package org.wcci.blog;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,46 +12,39 @@ public class Post {
 	@Id
 	@GeneratedValue
 	private Long postId;
-	private String author;
-	private String bodyText;
-	private String genre;
 	private String title;
-	
+	private String bodyText;
+
 	@ManyToOne
-	private Author theAuthor;
-	
+	private Author author;
 	@ManyToOne
-	private Genre theGenre;
-	
-	public Post(String title, String author, String bodyText, String genre){
+	private Genre genre;
+
+//~~~~~~~~~~~~~~The two constructors~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+	public Post(String title, 
+				Author author, 
+				String bodyText, 
+				Genre genre){
 		this.title = title;
 		this.author = author;
 		this.bodyText = bodyText;
 		this.genre = genre;
 	}
-	
 	public Post() {}
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+	
 	public Long getPostId() {
 		return postId;
 	}
-
-	public String getAuthor() {
+	public Author getAuthor() {
 		return author;
 	}
-
 	public String getBodyText() {
 		return bodyText;
 	}
-
-	public String getGenre() {
+	public Genre getGenre() {
 		return genre;
 	}
-	
-	public String getTitle() {
-		return title;
-	}
-	
 	@Override
 	public String toString() {
 		return title;

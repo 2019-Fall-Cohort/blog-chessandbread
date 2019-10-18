@@ -14,27 +14,22 @@ public class Genre {
 	private Long id;
 	private String genreName;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "genre")
 	private List<Post> posts;
 
+	
+//~~~~~~~~~~~~The two constructors~~~~~~~~~~~~~//
 	public Genre(String genreName) {
 		this.genreName = genreName;
 	}
-	
 	public Genre() {}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
+	
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public List<Post> getPosts() {
-		return posts;
-	}
-	
 	@Override
 	public String toString() {
 		return genreName;

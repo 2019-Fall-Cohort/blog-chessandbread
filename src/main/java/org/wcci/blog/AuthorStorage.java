@@ -8,14 +8,13 @@ public class AuthorStorage {
 
 	@Autowired
 	PostRepository postRepo;
-	
 	@Autowired
 	AuthorRepository authorRepo;
+
 	
 	public Author findAuthor(Long id) {
 		return authorRepo.findById(id).get();
 	}
-	
 	public Iterable<Author> findAllAuthors() {
 		return authorRepo.findAll();
 	}

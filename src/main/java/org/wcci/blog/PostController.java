@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 public class PostController {
 	
 	@Resource
 	PostStorage allPosts;
+	@Resource
+	AuthorStorage authors;
+	@Resource
+	GenreStorage genres;
 	
 	@GetMapping("/allPosts")
 	public String getPosts(Model model) {
@@ -23,14 +26,20 @@ public class PostController {
 	}
 	
 	@RequestMapping("/{id}")
-	public String getPost(@PathVariable ("id") Long id, Model model) {
+	public String getPost(@PathVariable ("id") long id, Model model) {
 		model.addAttribute("post", allPosts.findPost(id));
 		return "post";
 	}
 	
 	@PostMapping("/addPost")
-	public String addPost(String title, String author, String bodyText, String genre) {
-		Post post = new Post(title, author, bodyText, genre);	
+	public String addPost(String title, 
+						  Long authorId, 
+						  Long genreId,
+						  String bodyText
+						  ) {
+		Author author = authors.findAuthor(authorId);
+		Genre  genre  = genres.findGenre(genreId);
+		Post post = new Post(title, author, bodyText, genre);
 		allPosts.addPost(post);
 		return "redirect:/allPosts/";
 	}

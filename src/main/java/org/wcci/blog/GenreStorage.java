@@ -7,15 +7,13 @@ import org.springframework.stereotype.Service;
 public class GenreStorage {
 
 	@Autowired
-	AuthorRepository authorRepo;
-	
+	PostRepository postRepo;
 	@Autowired
 	GenreRepository genreRepo;
 	
 	public Genre findGenre(Long id) {
 		return genreRepo.findById(id).get();
 	}
-	
 	public Iterable<Genre> findAllGenres() {
 		return genreRepo.findAll();
 	}

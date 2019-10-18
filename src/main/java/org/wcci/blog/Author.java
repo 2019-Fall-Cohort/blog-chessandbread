@@ -14,27 +14,21 @@ public class Author {
 	@GeneratedValue
 	private Long id;
 	private String authorName;
-	
-	@OneToMany
+
+	@OneToMany(mappedBy = "author")
 	private List<Post> posts;
 
+//~~~~~~~~~~~~The two constructors~~~~~~~~~~~~~//
 	public Author(String authorName) {
 		this.authorName = authorName;
 	}
-	
 	public Author() {}
-	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//	
 	public Long getId() {
 		return id;
 	}
-	
-	public List<Post> getPosts(){
-		return posts;
-	}
-
 	@Override
 	public String toString() {
 		return authorName;
 	}
-	
 }

@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <p>Here's the latest & greatest!:</p>
+    <!-- <p>Here's the latest & greatest!:</p>
     <div th:each="post : ${allPosts}">
         <a th:text="${post.title}" th:href="|/allPosts/${post.postId}|">View All Posts</a>
-    </div>
+    </div> -->
 
     <main>
         <ul>
@@ -22,6 +22,7 @@
                         <span th:text="${post.genre}"></span>
                 </li>
             </ul>
+            <h3>Add a post!</h3>
             <form action="/addPost" method="POST">
                 <label>Title of your post: 
                         <input type="text" name="post.title" /></label>

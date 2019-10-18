@@ -18,23 +18,28 @@ public class Populator implements CommandLineRunner{
 	
 	@Override
     public void run(String... args) throws Exception{
-		Post post1 = new Post("Ruy Lopez", "Charles Smith", "A cunning opening strategy.", "Chess");
-		Post post2 = new Post("Sourdough Starters", "Alex Gochenour", "Guide to fermenting sourdough starters from scratch.", "Bread");
-		
-		Genre genre1 = new Genre("Chess");
-		Genre genre2 = new Genre("Bread");
-		
 		Author charles = new Author("Charles Smith");
 		Author alex = new Author("Alex Gochenour");
+		Author chuck = new Author("Chuck Norris");
+
+		Genre chess = new Genre("Chess");
+		Genre bread = new Genre("Bread");
+		Genre kicks = new Genre("Roundhouse kicks");
 		
+		Post post1 = new Post("Ruy Lopez", charles, "A cunning opening strategy.", chess);
+		Post post2 = new Post("Sourdough Starters", alex, "Guide to fermenting sourdough starters from scratch.", bread);
+		Post post3 = new Post("Roundhouse Kicks for Fun and Profit", chuck, "Today I'm going to talk about kicks.", kicks);
+
 		posts.save(post1);
 		posts.save(post2);
+		posts.save(post3);
 		
-		genres.save(genre1);
-		genres.save(genre2);
+		genres.save(chess);
+		genres.save(bread);
+		genres.save(kicks);
 		
 		authors.save(charles);
 		authors.save(alex);
+		authors.save(chuck);
 	}
-    
 }
