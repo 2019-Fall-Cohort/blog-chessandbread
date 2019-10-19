@@ -29,7 +29,7 @@ public class AuthorController {
 	}
 	
 	@PostMapping("/addAuthor")
-	public String addPost(String authorName) {
+	public String addAuthor(String authorName) {
 		Author author = new Author(authorName);
 		allAuthors.addAuthor(author);
 		return "redirect:/allAuthors/";
