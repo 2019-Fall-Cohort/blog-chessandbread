@@ -17,5 +17,7 @@ public class GenreStorage {
 	public Iterable<Genre> findAllGenres() {
 		return genreRepo.findAll();
 	}
-
+	public void addGenre(Genre genre) {
+		genreRepo.save(genre);
+	}
 }

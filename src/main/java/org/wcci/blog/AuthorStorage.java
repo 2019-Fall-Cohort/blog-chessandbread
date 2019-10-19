@@ -18,5 +18,9 @@ public class AuthorStorage {
 	public Iterable<Author> findAllAuthors() {
 		return authorRepo.findAll();
 	}
+	
+	public void addAuthor(Author author) {
+		authorRepo.save(author);
+	}
 
 }
