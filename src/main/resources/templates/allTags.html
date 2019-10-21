@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="entity-styles.css">
+    <title>Add and View Tags</title>
+</head>
+
+
+
+<body>
+  <h1 class="heading">Add and View Tags</h1>
+  <main>
+    <ul>
+      <li th:each="tag : ${tags}">
+        <span th:text="${tag.tagName}"></span>
+      </li>
+    </ul>
+
+  <h3>Add a tag!</h3>
+    <form action="/addTag" method="POST">
+      <label>Tag name: 
+        <input type="text" name="tag.tagName" placeholder="Something catchy"/>
+    </label>
+      <button type="publish">Add!</button>
+    </form>
+
+  </main>
+</body>

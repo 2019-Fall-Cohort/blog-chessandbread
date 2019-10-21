@@ -18,6 +18,8 @@ public class PostController {
 	AuthorStorage authors;
 	@Resource
 	GenreStorage genres;
+	@Resource
+	TagStorage tags;
 	
 	@GetMapping("/allPosts")
 	public String getPosts(Model model) {
@@ -35,10 +37,12 @@ public class PostController {
 	public String addPost(String title, 
 						  Long authorId, 
 						  Long genreId,
+						  Long tagId,
 						  String bodyText
 						  ) {
 		Author author = authors.findAuthor(authorId);
 		Genre  genre  = genres.findGenre(genreId);
+		Tag    tag	  = tags.findTag(tagId);
 		Post post = new Post(title, author, bodyText, genre);
 		allPosts.addPost(post);
 		return "redirect:/allPosts/";
