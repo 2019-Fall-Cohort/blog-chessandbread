@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="entity-styles.css">
+    <link rel="stylesheet" href="form.css">
     <title>Read All Posts!</title>
 </head>
+
+
 
 <body>
     <!-- <p>Here's the latest & greatest!:</p>
     <div th:each="post : ${allPosts}">
         <a th:text="${post.title}" th:href="|/allPosts/${post.postId}|">View All Posts</a>
     </div> -->
-
+    <h1 class="heading">Add and View Posts</h1>
     <main>
         <ul>
                 <li th:each="post : ${allPosts}">
@@ -24,15 +28,19 @@
             </ul>
             <h3>Add a post!</h3>
             <form action="/addPost" method="POST">
-                <label>Title of your post: 
-                        <input type="text" name="post.title" /></label>
-                <label>Author name: 
-                        <input type="text" name="post.author" /></label>
-                <label>Tell me a story! 
-                        <input type="text" name="post.bodyText" /></label>
-                <label>What genre? 
-                        <input type="text" name="post.genre" /></label>
 
+                <label>Title of your post:</label>
+                <input class="input" type="text" name="post.title">
+    
+                <label>Author name: </label>
+                <input class="input" type="text" name="post.author">
+    
+                <label class="blog-body-input">Tell me a story! </label>
+                <input class="input" type="text" name="post.bodyText">
+    
+                <label>What genre? </label>
+                <input class="input" type="text" name="post.genre">
+    
                 <button type="publish">Publish!</button>
             </form>
     </main>
@@ -40,5 +48,11 @@
 
 </body>
 
-<footer>&copy; 2019 Chess and Board</footer>
+
+
+<footer>
+  &copy; 2019 Chess and Bread
+</footer>
+
+
 </html>

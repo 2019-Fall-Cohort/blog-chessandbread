@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+body {
+    font-family: var(--anton);
+    color: chartreuse;
+}
+
+button {
+    color: orange;
+}
+
+.heading {
+    text-align: center;
+
+}
+
+input::-webkit-input-placeholder {
+    color: chartreuse;
+    font-family: Lato, sans-serif;
+}
+
+:root {
+    --anton: 'Anton', sans-serif;
+}
