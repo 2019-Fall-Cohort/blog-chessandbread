@@ -17,11 +17,15 @@ public class Tag {
 	
 	@ManyToMany(mappedBy = "tag")
 	private List<Post> posts;
+
+	
 	
 	public Tag(String tagName) {
 		this.tagName = tagName;
 	}
 	public Tag() {}
+	
+	
 	
 	public Long getId() {
 		return id;

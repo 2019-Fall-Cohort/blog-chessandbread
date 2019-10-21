@@ -14,15 +14,15 @@
   <h1 class="heading">Add and View Tags</h1>
   <main>
     <ul>
-      <li th:each="author : ${authors}">
-        <span th:text="${author.authorName}"></span>
+      <li th:each="tag : ${tags}">
+        <span th:text="${tag.tagName}"></span>
       </li>
     </ul>
 
-  <h3>Add an author!</h3>
-    <form action="/addAuthor" method="POST">
-      <label>Author name: 
-        <input type="text" name="author.authorName" placeholder="Full name"/>
+  <h3>Add a tag!</h3>
+    <form action="/addTag" method="POST">
+      <label>Tag name: 
+        <input type="text" name="tag.tagName" placeholder="Something catchy"/>
     </label>
       <button type="publish">Add!</button>
     </form>

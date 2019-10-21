@@ -21,19 +21,17 @@ public class Post {
 	@ManyToOne
 	private Genre genre;
 	@ManyToMany
-	private Tag tag;
+	private List<Tag> allTags;
 
 //~~~~~~~~~~~~~~The two constructors~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 	public Post(String title, 
 				Author author, 
 				String bodyText, 
-				Genre genre,
-				Tag tag){
+				Genre genre){
 		this.title = title;
 		this.author = author;
 		this.bodyText = bodyText;
 		this.genre = genre;
-		this.tag = tag;
 	}
 	public Post() {}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
@@ -50,8 +48,8 @@ public class Post {
 	public Genre getGenre() {
 		return genre;
 	}
-	public Tag getTag() {
-		return tag;
+	public List<Tag> getTag() {
+		return allTags;
 	}
 	@Override
 	public String toString() {

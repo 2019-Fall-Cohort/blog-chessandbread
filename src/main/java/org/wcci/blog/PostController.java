@@ -43,7 +43,7 @@ public class PostController {
 		Author author = authors.findAuthor(authorId);
 		Genre  genre  = genres.findGenre(genreId);
 		Tag    tag	  = tags.findTag(tagId);
-		Post post = new Post(title, author, bodyText, genre, tag);
+		Post post = new Post(title, author, bodyText, genre);
 		allPosts.addPost(post);
 		return "redirect:/allPosts/";
 	}

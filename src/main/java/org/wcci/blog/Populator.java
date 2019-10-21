@@ -33,10 +33,18 @@ public class Populator implements CommandLineRunner{
 		Tag tutorial = new Tag("Tutorial");
 		Tag news = new Tag("News");
 		
-		Post post1 = new Post("Ruy Lopez", charles, "A cunning opening strategy.", chess, tutorial);
-		Post post2 = new Post("Sourdough Starters", alex, "Guide to fermenting sourdough starters from scratch.", bread, tutorial);
-		Post post3 = new Post("Roundhouse Kicks for Fun and Profit", chuck, "Today I'm going to talk about kicks.", kicks, rant);
-
+		Post post1 = new Post("Ruy Lopez",
+							  charles, 
+							  "A cunning opening strategy.", 
+							  chess);
+		Post post2 = new Post("Sourdough Starters", 
+							  alex, 
+							  "Guide to fermenting sourdough starters from scratch.", 
+							  bread);
+		Post post3 = new Post("Roundhouse Kicks for Fun and Profit", 
+							  chuck, 
+							  "Today I'm going to talk about kicks.", 
+							  kicks);
 		posts.save(post1);
 		posts.save(post2);
 		posts.save(post3);
