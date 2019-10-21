@@ -16,6 +16,9 @@ public class Populator implements CommandLineRunner{
 	@Autowired
 	PostRepository posts;
 	
+	@Autowired
+	TagRepository tags;
+	
 	@Override
     public void run(String... args) throws Exception{
 		Author charles = new Author("Charles Smith");
@@ -25,10 +28,14 @@ public class Populator implements CommandLineRunner{
 		Genre chess = new Genre("Chess");
 		Genre bread = new Genre("Bread");
 		Genre kicks = new Genre("Roundhouse kicks");
+
+		Tag rant = new Tag("Rant");
+		Tag tutorial = new Tag("Tutorial");
+		Tag news = new Tag("News");
 		
-		Post post1 = new Post("Ruy Lopez", charles, "A cunning opening strategy.", chess);
-		Post post2 = new Post("Sourdough Starters", alex, "Guide to fermenting sourdough starters from scratch.", bread);
-		Post post3 = new Post("Roundhouse Kicks for Fun and Profit", chuck, "Today I'm going to talk about kicks.", kicks);
+		Post post1 = new Post("Ruy Lopez", charles, "A cunning opening strategy.", chess, tutorial);
+		Post post2 = new Post("Sourdough Starters", alex, "Guide to fermenting sourdough starters from scratch.", bread, tutorial);
+		Post post3 = new Post("Roundhouse Kicks for Fun and Profit", chuck, "Today I'm going to talk about kicks.", kicks, rant);
 
 		posts.save(post1);
 		posts.save(post2);
@@ -41,5 +48,9 @@ public class Populator implements CommandLineRunner{
 		authors.save(charles);
 		authors.save(alex);
 		authors.save(chuck);
+		
+		tags.save(rant);
+		tags.save(tutorial);
+		tags.save(news);
 	}
 }

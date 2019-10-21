@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -19,16 +20,20 @@ public class Post {
 	private Author author;
 	@ManyToOne
 	private Genre genre;
+	@ManyToMany
+	private Tag tag;
 
 //~~~~~~~~~~~~~~The two constructors~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 	public Post(String title, 
 				Author author, 
 				String bodyText, 
-				Genre genre){
+				Genre genre,
+				Tag tag){
 		this.title = title;
 		this.author = author;
 		this.bodyText = bodyText;
 		this.genre = genre;
+		this.tag = tag;
 	}
 	public Post() {}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
@@ -44,6 +49,9 @@ public class Post {
 	}
 	public Genre getGenre() {
 		return genre;
+	}
+	public Tag getTag() {
+		return tag;
 	}
 	@Override
 	public String toString() {
