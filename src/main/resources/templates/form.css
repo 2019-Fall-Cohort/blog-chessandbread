@@ -1,0 +1,14 @@
+.blog-body-input {
+
+}
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 5px;
+}
+
+label {
+    grid-column: 1 / 2;
+}

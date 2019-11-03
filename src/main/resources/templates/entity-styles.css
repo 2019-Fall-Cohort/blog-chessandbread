@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+
+body {
+    background-image: url('images/calligraphy.png');
+    color: rgb(47, 93, 0);
+    font-family: var(--anton);
+}
+
+button {
+    background-color: rgb(167, 185, 139);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    font-size: 12px;
+    display: inline-block;
+    padding: 6px 10px;
+}
+
+button:hover {
+    background-color: rgb(63, 97, 8);
+    color: white;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type=text], select {
+    border: 1px solid rgb(139, 18, 18);
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 6px 10px;
+    width: 50%;
+  }
+
+input::-webkit-input-placeholder {
+    color: rgb(255, 152, 255);
+    font-family: Lato, sans-serif;
+}
+
+li {
+    /* Un-comment the line below to remove the bullet. I'm keeping it here for sake of testing from a static page. */
+    /* list-style: none; */
+}
+
+:root {
+    --anton: 'Anton', san-serif;
+}
